@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a843eef6dbb166954ee12fd5d405edb6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>DirCase</title>
+	<style>
+		:root{
+			--bg:#0f1724;--card:#0b1220;--text:#e6eef8;--muted:#9fb0c8;--accent:#5eead4;
+		}
+		[data-theme="light"]{ --bg:#f6f8fb; --card:#ffffff; --text:#071022; --muted:#4b5563; --accent:#2563eb }
+		*{box-sizing:border-box}
+		html,body{height:100%}
+		body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--bg),#071022);color:var(--text);transition:background .3s,color .3s}
+		.wrap{width:min(880px,92vw);padding:48px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.03));backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+		[data-theme="light"] .wrap{box-shadow:0 6px 18px rgba(2,6,23,0.06);}
+		header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+		.brand{display:flex;align-items:center;gap:14px}
+		.logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#7c3aed);font-weight:700;color:var(--card);font-size:20px}
+		h1{font-size:20px;margin:0}
+		p.lead{margin:0;color:var(--muted);font-size:13px}
+		.controls{display:flex;gap:8px;align-items:center}
+		.icon-btn{width:44px;height:44px;border-radius:10px;border:1px solid transparent;background:transparent;display:inline-grid;place-items:center;cursor:pointer;transition:transform .12s,background .12s;border:1px solid rgba(255,255,255,0.03)}
+		.icon-btn:active{transform:scale(.96)}
+		.card{padding:26px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.02)}
+		.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+		.meta .item{display:flex;flex-direction:column}
+		.meta .label{font-size:12px;color:var(--muted)}
+		.meta .value{font-weight:600}
+		.time{font-family:monospace;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:10px 14px;border-radius:8px;display:inline-block}
+		a.link{color:var(--accent);text-decoration:none}
+		footer{margin-top:18px;color:var(--muted);font-size:13px}
+		@media (max-width:520px){.wrap{padding:20px}.logo{width:48px;height:48px}}
+	</style>
+</head>
+<body>
+	<div class="wrap" id="app">
+		<header>
+			<div class="brand">
+				<div class="logo">DC</div>
+				<div>
+					<h1>DirCase · 个人站点</h1>
+					<p class="lead">现代 · 简约 · 科技感</p>
+				</div>
+			</div>
+			<div class="controls">
+				<button class="icon-btn" id="btn-sun" title="切换深色主题（点击太阳进入深色）" aria-label="切换到深色">
+					<!-- 太阳图标 -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+				</button>
+				<button class="icon-btn" id="btn-moon" title="切换浅色主题（点击月亮进入浅色）" aria-label="切换到浅色">
+					<!-- 月亮图标 -->
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+				</button>
+			</div>
+		</header>
+
+		<section class="card">
+			<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+				<div>
+					<div class="time" id="datetime">今天是 --年--月--日 --:--:--</div>
+					<div style="margin-top:12px;font-size:15px">欢迎！这里是一个轻量的个人主页，展示项目与链接，快速访问My GitHub Pages 站点与仓库信息。</div>
+				</div>
+				<div class="meta">
+					<div class="item">
+						<span class="label">站点 URL</span>
+						<a class="value link" href="https://dircase.github.io/" target="_blank" rel="noreferrer">https://dircase.github.io/</a>
+					</div>
+					<div class="item">
+						<span class="label">仓库</span>
+						<span class="value">dircase.github.io</span>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				- 快速开始：克隆仓库并推送更新以刷新 Pages。更多资料请查看 README。
+			</footer>
+		</section>
+	</div>
+
+	<script>
+		// 主题控制：点击太阳 -> 深色；点击月亮 -> 浅色
+		const root = document.documentElement;
+		const stored = localStorage.getItem('site-theme');
+		const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if(stored){ document.documentElement.setAttribute('data-theme', stored); }
+		else { document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light'); }
+
+		function setTheme(name){ document.documentElement.setAttribute('data-theme', name); localStorage.setItem('site-theme', name); }
+		document.getElementById('btn-sun').addEventListener('click', ()=> setTheme('dark'));
+		document.getElementById('btn-moon').addEventListener('click', ()=> setTheme('light'));
+
+		// 动态日期时间（中文格式）
+		const dt = document.getElementById('datetime');
+		function pad(n){ return n.toString().padStart(2,'0'); }
+		function updateTime(){
+			const now = new Date();
+			const Y = now.getFullYear();
+			const M = now.getMonth()+1; const D = now.getDate();
+			const hh = pad(now.getHours()); const mm = pad(now.getMinutes()); const ss = pad(now.getSeconds());
+			dt.textContent = `今天是${Y}年${M}月${D}日 ${hh}:${mm}:${ss}`;
+		}
+		updateTime(); setInterval(updateTime,1000);
+	</script>
+</body>
+</html>
+
